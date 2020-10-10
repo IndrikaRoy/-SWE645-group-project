@@ -4,7 +4,7 @@ pipeline {
         stage('Publish') { 
             steps {
                 script {
-                    docker.withRegistry("", "docker-hub-indrika123") {
+                    docker.withRegistry("", "indrika123_dockerhub") {
                         def customImage = docker.build("indrika123/swe645-fall2020-hw1")
                         customImage.push()
                     }
